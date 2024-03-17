@@ -6,25 +6,18 @@ namespace Atmachine
     {
         static void Main(string[] args)
         {
-            double initialBalance = 5000; 
-            BankAccount account = new BankAccount(initialBalance);
+            Console.WriteLine("Welcome to MaraATM");
+            Thread.Sleep(3000);
 
-            Console.WriteLine("Welcome to the ATM!");
-            Console.WriteLine($"Your initial balance: $ {account.GetBalance():N2}");
+            void printOptions()
+            {
+                Console.WriteLine("Please chose from one of the following opions...");
+                Console.WriteLine("1. Deposit");
+                Console.WriteLine("2. Withdraw");
+                Console.WriteLine("3. Show Balance");
+                Console.WriteLine("4. Exit");
+            }
 
-            
-            account.Deposit(1000);
-            Console.WriteLine($"New balance after deposit: $ {account.GetBalance():N2}");
-
-            
-            bool success = account.Withdraw(2000);
-            if (success)
-                Console.WriteLine($"New balance after withdrawal: $ {account.GetBalance():N2}");
-
-            
-            account.Withdraw(10000); 
-
-            Console.ReadKey();
         }
     }
 }
